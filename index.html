@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Closet Design Eastern Washington | Modern Storage Ideas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #F5F2EB 0%, #EBE5DA 100%);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      color: #2C2B28;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* warm modern palette: rich walnut + soft sand + sage */
+    :root {
+      --brand-walnut: #5E3A2A;
+      --brand-sage: #8FA88A;
+      --brand-sand: #FDF8F0;
+      --card-white: #FFFFFF;
+      --border-warm: #E2D8CE;
+      --shadow-sm: 0 8px 18px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.02);
+      --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--brand-walnut);
+      margin-bottom: 1.2rem;
+    }
+    h1::after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 4px;
+      background: var(--brand-sage);
+      border-radius: 4px;
+      margin-top: 0.6rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3.2vw, 2rem);
+      font-weight: 700;
+      color: var(--brand-walnut);
+      margin: 2rem 0 1rem 0;
+      letter-spacing: -0.3px;
+      border-left: 5px solid var(--brand-sage);
+      padding-left: 1rem;
+    }
+
+    h3 {
+      font-size: 1.28rem;
+      font-weight: 600;
+      color: #7A5A48;
+      margin: 1.4rem 0 0.6rem 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* header premium */
+    .site-header {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(94, 58, 42, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+      gap: 1rem;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.7rem;
+      letter-spacing: -0.02em;
+      color: var(--brand-walnut);
+    }
+    .logo span {
+      color: var(--brand-sage);
+    }
+    .logo small {
+      font-size: 0.65rem;
+      font-weight: 400;
+      color: #7A6B60;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #6F4E3C;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 3px;
+    }
+    .nav-links a:hover {
+      color: var(--brand-sage);
+      border-bottom-color: var(--brand-sage);
+    }
+
+    /* inline link style (no button) */
+    .smart-link {
+      color: var(--brand-sage);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-thickness: 1.2px;
+      text-underline-offset: 3px;
+      transition: 0.2s;
+    }
+    .smart-link:hover {
+      color: #6E8A68;
+      text-decoration-thickness: 2px;
+    }
+
+    /* feature grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+    }
+    .feature-card {
+      background: var(--card-white);
+      padding: 1.2rem;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-warm);
+      transition: 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #8FA88A;
+    }
+    .feature-card strong {
+      color: var(--brand-walnut);
+    }
+
+    /* features list */
+    .closet-features {
+      background: var(--card-white);
+      border-radius: 1.5rem;
+      padding: 1.5rem 2rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-warm);
+    }
+    .closet-features ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.8rem;
+      list-style-type: none;
+    }
+    .closet-features li {
+      padding-left: 1.5rem;
+      position: relative;
+      font-weight: 500;
+    }
+    .closet-features li::before {
+      content: "✓";
+      color: var(--brand-sage);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    /* comparison table */
+    .compare-table {
+      width: 100%;
+      background: white;
+      border-radius: 1.4rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      margin: 1.8rem 0;
+      border-collapse: collapse;
+    }
+    .compare-table th, .compare-table td {
+      padding: 1rem 1.2rem;
+      text-align: left;
+      border-bottom: 1px solid #E2D8CE;
+    }
+    .compare-table th {
+      background-color: #F2EDE6;
+      font-weight: 700;
+      color: #5E3A2A;
+    }
+    .badge-custom {
+      background: #E9F0E7;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: inline-block;
+      color: #8FA88A;
+    }
+
+    .insight-card {
+      background: #FEFCF8;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      margin: 1.8rem 0;
+      border-left: 6px solid var(--brand-sage);
+    }
+
+    footer {
+      background: #2C2B28;
+      margin-top: 4rem;
+      padding: 2.2rem 0 1.8rem;
+      color: #CEC9C2;
+    }
+    .footer-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: #CEC9C2;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+    }
+    .footer-links a:hover {
+      color: var(--brand-sage);
+      border-bottom-color: var(--brand-sage);
+    }
+    .copyright {
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+    hr {
+      margin: 2rem 0;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, #E2D8CE, transparent);
+    }
+
+    @media (max-width: 700px) {
+      .header-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      CLOSET<span>DESIGN</span> NW
+      <small>eastern washington • modern storage</small>
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Ideas</a>
+      <a href="#">Styles</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- Hero + intro paragraph with FIRST LINK embedded naturally -->
+    <div style="margin: 2rem 0 1rem 0;">
+      <h1>Closet Design in Eastern Washington<br>Modern Storage Ideas</h1>
+      <p style="font-size: 1.12rem; color: #6B5A4E; margin-bottom: 1rem;">
+        Closet design has become an important part of modern home planning, especially in regions where homeowners value both functionality and style. In Eastern Washington, closet design is evolving rapidly as people look for smarter ways to organize their living spaces. Instead of basic storage, homeowners now prefer custom solutions that improve space usage and match interior aesthetics.
+      </p>
+      <p style="margin-bottom: 1rem;">
+        From walk-in closets in large homes to compact storage systems in apartments, closet design in Eastern Washington focuses on maximizing space while keeping everything visually clean and easy to access.
+        Explore expert design solutions at <a href="https://closets-nw.com/" class="smart-link" target="_blank" rel="noopener noreferrer">Closet Designer in Idaho</a> — transforming spaces with smart storage ideas.
+      </p>
+    </div>
+
+    <!-- The Growing Demand for Closet Design in Eastern Washington -->
+    <h2>The Growing Demand for Closet Design in Eastern Washington</h2>
+    <p>Homes in Eastern Washington vary in size and layout, which creates different storage needs for every household. Many older homes lack built-in storage, while modern homes require more organized and efficient closet systems. This has increased the demand for custom closet solutions. Homeowners now want designs that are not only practical but also stylish and long-lasting. As a result, professional closet design services have become more popular in cities and suburban areas across the region. The focus is no longer just on storage—it is about improving lifestyle and home organization.</p>
+
+    <!-- What Makes a Good Closet Design? -->
+    <h2>What Makes a Good Closet Design?</h2>
+    <p>A good closet design is more than shelves and rods. It is about creating a system that fits the user's daily routine and space requirements. Key elements include proper space planning, easy accessibility, and smart organization. A well-designed closet ensures that every item has a dedicated place, reducing clutter and saving time. Lighting, material quality, and layout also play a major role. Modern designs often include adjustable shelves, drawers, and custom compartments to improve usability.</p>
+
+    <!-- Popular Closet Design Styles in Eastern Washington -->
+    <h2>Popular Closet Design Styles in Eastern Washington</h2>
+    <p>Homeowners in Eastern Washington prefer a variety of closet styles based on their needs and space availability. Walk-in closets are popular in larger homes because they offer maximum storage and luxury feel. Reach-in closets are commonly used in smaller bedrooms where space is limited. Custom wardrobe systems are also widely used because they offer flexibility and can be designed according to personal storage habits.</p>
+
+    <!-- List: Common Closet Features Used in Modern Designs -->
+    <h2>Common Closet Features Used in Modern Designs</h2>
+    <div class="closet-features">
+      <ul>
+        <li>Adjustable shelving systems for flexible storage</li>
+        <li>Built-in drawers for organized clothing placement</li>
+        <li>Hanging rods for shirts, suits, and dresses</li>
+        <li>Shoe racks and dedicated footwear sections</li>
+        <li>Corner storage units for unused spaces</li>
+        <li>Sliding doors for space-saving designs</li>
+        <li>Integrated lighting for better visibility</li>
+        <li>Custom compartments for accessories and essentials</li>
+      </ul>
+    </div>
+    <p>These features help transform simple closets into highly functional storage systems.</p>
+
+    <!-- Materials Used in Closet Design -->
+    <h2>Materials Used in Closet Design</h2>
+    <p>Material selection is an important part of closet design in Eastern Washington. Most modern closets use engineered wood, melamine, or plywood for durability and cost efficiency. Melamine is especially popular because it offers a smooth finish, resistance to scratches, and a modern look. Metal fittings are also used for strength and long-term support. The combination of durable materials and smart design ensures that closets remain functional for many years without major maintenance.</p>
+
+    <!-- Comparison Table: Custom Closet vs Standard Closet -->
+    <h2>Comparison: Custom Closet vs Standard Closet</h2>
+    <table class="compare-table">
+      <thead>
+        <tr><th>Feature Area</th><th>Standard Closet</th><th>Custom Closet Design</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Space Usage</th><td>Limited efficiency</th><td><span class="badge-custom">Fully optimized</span></th></tr>
+        <tr>
+        <td>Design Flexibility</th>
+        <td>Fixed layout</th>
+        <td><span class="badge-custom">Fully customizable</span></th>
+        </tr>
+        <tr>
+        <td>Storage Options</th>
+        <td>Basic shelves</th>
+        <td><span class="badge-custom">Multiple storage solutions</span></th>
+        </tr>
+        <tr>
+        <td>Appearance</th>
+        <td>Simple</th>
+        <td><span class="badge-custom">Modern and stylish</span></th>
+        </tr>
+        <tr>
+        <td>Durability</th>
+        <td>Moderate</th>
+        <td><span class="badge-custom">High-quality materials</span></th>
+        </tr>
+        <tr>
+        <td>Organization</th>
+        <td>Basic</th>
+        <td><span class="badge-custom">Advanced organization systems</span></th>
+        </tr>
+      </tbody>
+    </table>
+    <p>This comparison shows why more homeowners in Eastern Washington are choosing custom closet designs.</p>
+
+    <!-- Why Closet Design is Important for Modern Homes -->
+    <div class="insight-card">
+      <h3 style="margin-top:0;">🏠 Why Closet Design is Important for Modern Homes</h3>
+      <p>Closet design plays a major role in improving daily life. A well-organized space reduces stress and makes it easier to find items quickly. In busy households, proper storage saves time and improves efficiency. It also helps maintain cleanliness by reducing clutter in bedrooms and living areas. Additionally, a well-designed closet adds value to a home, making it more attractive for future buyers.</p>
+    </div>
+
+    <!-- Trends in Eastern Washington Closet Design -->
+    <h2>Trends in Eastern Washington Closet Design</h2>
+    <p>Modern closet design trends in Eastern Washington focus on simplicity, functionality, and aesthetics. Minimalist designs with clean lines are becoming more popular. Homeowners are also choosing open shelving systems combined with hidden storage for a balanced look. Neutral colors and natural textures are widely used to match modern interiors. Smart storage solutions that maximize vertical space are also gaining attention, especially in smaller homes.</p>
+
+    <!-- Final Thoughts -->
+    <h2>Final Thoughts</h2>
+    <p>
+      Closet design in Eastern Washington is no longer just about storage—it is about creating organized, efficient, and visually appealing spaces. With growing demand for custom solutions, homeowners are investing in designs that match their lifestyle and home structure.
+      From simple reach-in closets to fully customized walk-in systems, modern designs offer flexibility, durability, and style. As interior trends continue to evolve, closet design will remain an important part of home improvement in the region.
+      In the end, a well-planned closet is not just storage—it is a smart way to improve daily living and enhance overall home value.
+    </p>
+    <hr />
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-flex">
+    <div class="copyright">© CLOSET DESIGN NW • eastern washington • modern storage solutions</div>
+    <div class="footer-links">
+      <a href="https://closets-nw.com/" target="_blank" rel="noopener noreferrer">Closet Designer in Idaho</a>
+    </div>
+    <div class="copyright" style="font-size:0.7rem;">smart storage • timeless style • organized living</div>
+  </div>
+</footer>
+</body>
+</html>
